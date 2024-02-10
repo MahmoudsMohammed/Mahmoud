@@ -4,8 +4,11 @@
   outline: none;
 }
 html {
-  font-size: 10px;
   scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #141c3a;
 }
 a {
   text-decoration: none;
@@ -25,14 +28,14 @@ input:focus {
 }
 // end main rules
 
-// variables
-$main-color: #9b319d;
-$text-one: #141c3a;
-$text-two: #f0f8ff;
-
 // placeholder
 %flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+%flex-between {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
