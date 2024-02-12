@@ -85,6 +85,7 @@ input:focus {
 // button styling
 .but {
   & {
+    text-transform: capitalize;
     border: none;
     background-color: var(--main-color);
     padding: 15px 20px;

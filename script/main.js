@@ -6,3 +6,26 @@ const type = new Typed('.typed', {
   backDelay: 1000,
   loop: true,
 });
+
+// mixitup
+let mixer = mixitup('.work', {
+  selectors: {
+    target: '.box',
+  },
+  animation: {
+    duration: 500,
+  },
+});
+
+// activate project category
+document.querySelector('.filter').addEventListener('click', activeCategory);
+const categories = document.querySelectorAll('.filter li');
+function activeCategory(e) {
+  categories.forEach((li) => {
+    if (e.target.textContent === li.textContent) {
+      e.target.classList.add('active-category');
+    } else {
+      li.classList.remove('active-category');
+    }
+  });
+}

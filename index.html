@@ -172,13 +172,13 @@
       </div>
       <div class="container projets-container">
         <ul class="filter">
-          <li>All</li>
-          <li>Templates</li>
-          <li>JavaScript</li>
-          <li>Angular</li>
+          <li class="active-category" data-filter="all">All</li>
+          <li data-filter=".templates">Templates</li>
+          <li data-filter=".js">JavaScript</li>
+          <li data-filter=".angular">Angular</li>
         </ul>
         <div class="work">
-          <div class="box angular">
+          <div class="mix box angular">
             <img src="./static/angular1.png" alt="" />
             <div class="decripe">
               <h3>EGY-Film</h3>
@@ -187,9 +187,9 @@
                 category, and see film details like cast and trailer.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box angular">
+          <div class="mix box angular">
             <img src="./static/angualr2.png" alt="" />
             <div class="decripe">
               <h3>Recipe-Book</h3>
@@ -198,9 +198,9 @@
                 to add ingredients to a shopping list.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box js">
+          <div class="mix box js">
             <img src="./static/whereinworld-js6.png" alt="" />
             <div class="decripe">
               <h3>Where in the world</h3>
@@ -209,17 +209,17 @@
                 Responsive Design.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box templates">
+          <div class="mix box templates">
             <img src="./static/landing5.png" alt="" />
             <div class="decripe">
               <h3>Amon</h3>
               <p>Website for an Egyptian Travel Agency.</p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box templates">
+          <div class="mix box templates">
             <img src="./static/landing3.png" alt="" />
             <div class="decripe">
               <h3>Business Landing Page</h3>
@@ -228,9 +228,9 @@
                 animation which makes the User Experience more enjoyable.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box templates">
+          <div class="mix box templates">
             <img src="./static/landing4.png" alt="" />
             <div class="decripe">
               <h3>Architect</h3>
@@ -239,9 +239,9 @@
                 Experience Enjoyable.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box js">
+          <div class="mix box js">
             <img src="./static/finder-js5.png" alt="" />
             <div class="decripe">
               <h3>GitHub-Finder</h3>
@@ -250,9 +250,9 @@
                 Data and Recently Created Repositories.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box js">
+          <div class="mix box js">
             <img src="./static/loan-js2.png" alt="" />
             <div class="decripe">
               <h3>Loan-Calculator</h3>
@@ -261,9 +261,9 @@
                 Payment and Total Interest.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box js">
+          <div class="mix box js">
             <img src="./static/gusser.js3.png" alt="" />
             <div class="decripe">
               <h3>Number-Guesser</h3>
@@ -272,9 +272,9 @@
                 3 tries of playing.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box js">
+          <div class="mix box js">
             <img src="./static/library-js4.png" alt="" />
             <div class="decripe">
               <h3>Library-Admin</h3>
@@ -283,9 +283,9 @@
                 manage the library.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box js">
+          <div class="mix box js">
             <img src="./static/todo-js1.png" alt="" />
             <div class="decripe">
               <h3>Todo-List</h3>
@@ -294,23 +294,23 @@
                 or even clear the whole list.
               </p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box templates">
+          <div class="mix box templates">
             <img src="./static/landing1.png" alt="" />
             <div class="decripe">
               <h3>Kasper</h3>
               <p>landing page using HTML 5 and CSS 3.</p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
-          <div class="box templates">
+          <div class="mix box templates">
             <img src="./static/landing2.png" alt="" />
             <div class="decripe">
               <h3>Leon</h3>
               <p>my first landing page using HTML and CSS</p>
             </div>
-            <button>details</button>
+            <button class="but">details</button>
           </div>
         </div>
       </div>
@@ -318,6 +318,8 @@
     <!-- end projects -->
 
     <!-- Scripts -->
+    <!-- Mixitup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
     <!-- Typed js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <!-- Scroll-Reveal -->

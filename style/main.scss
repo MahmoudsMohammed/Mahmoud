@@ -297,3 +297,49 @@
   }
 }
 // end about
+
+// start projects
+.projects {
+  & {
+    padding: var(--section-padding) 0px;
+    background-color: var(--section-bg-color);
+  }
+  .filter {
+    & {
+      @extend %flex-center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .active-category {
+      background-color: var(--main-color);
+      padding: 6px 15px;
+      color: white;
+      border-radius: 5px;
+    }
+    li {
+      cursor: pointer;
+    }
+  }
+  .work {
+    & {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .box {
+      & {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        text-align: center;
+        cursor: default;
+      }
+      img {
+        height: 400px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+// end projects
