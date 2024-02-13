@@ -440,3 +440,55 @@
   }
 }
 // end projects
+
+// start contact
+.contact {
+  & {
+    padding: var(--section-padding) 0px;
+    background: linear-gradient(
+        to right,
+        rgba(241, 245, 245, 0.8),
+        rgba(245, 245, 245, 0.8)
+      ),
+      url('../static/bg.svg');
+  }
+  form {
+    & {
+      width: 650px;
+      max-width: calc(100% - 20px);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    label {
+      color: var(--text-one);
+      font-size: 15px;
+      font-weight: 500;
+    }
+    input,
+    textarea {
+      width: 100%;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      color: black;
+      &::-webkit-input-placeholder {
+        color: #666666;
+        font-weight: 400;
+      }
+    }
+    textarea {
+      resize: none;
+      height: 200px;
+    }
+  }
+}
+// end contact
