@@ -7,7 +7,7 @@ const type = new Typed('.typed', {
   loop: true,
 });
 
-// mixitup
+// mixitup to filter projects
 let mixer = mixitup('.work', {
   selectors: {
     target: '.box',
@@ -17,7 +17,7 @@ let mixer = mixitup('.work', {
   },
 });
 
-// activate project category
+// activate selected projects category
 document.querySelector('.filter').addEventListener('click', activeCategory);
 const categories = document.querySelectorAll('.filter li');
 
@@ -52,3 +52,21 @@ closeDetails.forEach((el) => {
     document.body.style.overflow = 'auto';
   });
 });
+
+// Scroll reveal
+const reveal = ScrollReveal({
+    distance: '100px',
+    duration: 2000,
+    reset: true,
+  }),
+  skills = document.querySelectorAll('.group>span');
+
+skills.forEach((s, i) => {
+  reveal.reveal(s, { delay: 50 * (i + 1) });
+});
+reveal.reveal(`.content,footer .info,.about .descripe`, { origin: 'top' });
+reveal.reveal('.computer, footer .container>p,.about .skills', {
+  origin: 'bottom',
+});
+reveal.reveal(`.about .title,.contact .title,.filter`, { origin: 'left' });
+reveal.reveal(`.projects .title,form`, { origin: 'right' });

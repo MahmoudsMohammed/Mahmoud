@@ -77,6 +77,7 @@
     & {
       padding: var(--section-padding) 0px;
       margin-top: 80px;
+      overflow: hidden;
     }
     .start-container {
       & {
@@ -199,6 +200,7 @@
         rgba(245, 245, 245, 0.8)
       ),
       url('../static/bg.svg');
+    overflow: hidden;
   }
   .about-container {
     & {
@@ -303,6 +305,7 @@
   & {
     padding: var(--section-padding) 0px;
     background-color: var(--section-bg-color);
+    overflow: hidden;
   }
   .filter {
     & {
@@ -347,12 +350,12 @@
       .overlay {
         & {
           display: none;
-          position: fixed;
-          z-index: 2000;
+          position: fixed !important;
+          z-index: 2000 !important;
           top: 0;
           left: 0;
-          width: 100vw;
-          height: 100vh;
+          width: 100vw !important;
+          height: 100vh !important;
           background-color: rgba(0, 0, 0, 0.7);
         }
         .details {
@@ -451,6 +454,7 @@
         rgba(245, 245, 245, 0.8)
       ),
       url('../static/bg.svg');
+    overflow: hidden;
   }
   form {
     & {
@@ -500,6 +504,7 @@ footer {
     background-color: black;
     text-align: center;
     color: white;
+    overflow: hidden;
   }
   .info {
     & {
