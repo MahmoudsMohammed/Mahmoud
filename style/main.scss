@@ -492,3 +492,58 @@
   }
 }
 // end contact
+
+// start footer
+footer {
+  & {
+    padding: var(--section-padding) 0px 20px;
+    background-color: black;
+    text-align: center;
+    color: white;
+  }
+  .info {
+    & {
+      margin-bottom: 40px;
+    }
+    p:first-of-type {
+      font-size: 25px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    p:last-of-type {
+      text-transform: capitalize;
+      margin-bottom: 10px;
+      i {
+        color: #dd0031;
+        font-size: 25px;
+        position: relative;
+        bottom: -3px;
+        margin-left: 3px;
+      }
+    }
+    .socila {
+      & {
+        margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+      a {
+        & {
+          color: #858585;
+          transition: 0.3s;
+        }
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  .container > p {
+    font-size: 15px;
+    border-top: 1px solid #666;
+    padding-top: 20px;
+  }
+}
+// end footer
