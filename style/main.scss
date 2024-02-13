@@ -552,3 +552,111 @@ footer {
   }
 }
 // end footer
+
+// start loader
+.loader {
+  & {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: 0.8s ease-in-out;
+  }
+  > div {
+    & {
+      text-align: center;
+      animation: apperance 3s ease-in-out forwards;
+    }
+    @keyframes apperance {
+      0% {
+        display: none;
+      }
+      99% {
+        display: block;
+      }
+      100% {
+        display: none;
+      }
+    }
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--main-color);
+    margin-bottom: 0px;
+  }
+  // start spinner
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--main-color);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+}
+
+// end loader

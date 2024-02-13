@@ -70,3 +70,20 @@ reveal.reveal('.computer, footer .container>p,.about .skills', {
 });
 reveal.reveal(`.about .title,.contact .title,.filter`, { origin: 'left' });
 reveal.reveal(`.projects .title,form`, { origin: 'right' });
+
+// control over loader
+const loader = document.querySelector('.loader'),
+  main = document.querySelector('main');
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.style.overflowY = 'hidden';
+  document.body.style.position = 'fixed';
+});
+setTimeout(() => {
+  loader.style.top = '-100%';
+}, 3500);
+
+setTimeout(() => {
+  document.body.style.overflowY = 'scroll';
+  document.body.style.position = 'static';
+}, 4500);
