@@ -74,7 +74,7 @@ reveal.reveal(`.projects .filter`, { origin: 'left' });
 reveal.reveal(`.contact .title`, { origin: 'left' });
 reveal.reveal(`.contact form`, { origin: 'right' });
 reveal.reveal(`footer .info`, { origin: 'top' });
-reveal.reveal(`footer .container>p`, { origin: 'bottom' });
+reveal.reveal(`footer .copy`, { origin: 'bottom' });
 
 // control over loader
 const loader = document.querySelector('.loader'),

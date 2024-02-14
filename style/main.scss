@@ -454,7 +454,7 @@
         rgba(245, 245, 245, 0.8)
       ),
       url('../static/bg.svg');
-    overflow: hidden;
+    overflow-x: hidden;
   }
   form {
     & {
@@ -504,7 +504,7 @@ footer {
     background-color: black;
     text-align: center;
     color: white;
-    overflow: hidden;
+    overflow-y: hidden;
   }
   .info {
     & {
