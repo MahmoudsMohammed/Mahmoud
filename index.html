@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="style/bootstrap.css" />
     <!-- Normalize Css -->
     <link rel="stylesheet" href="style/normalize.css" />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+    />
     <!-- main Css -->
     <link rel="stylesheet" href="style/main.css" />
     <!-- icon -->
@@ -67,7 +72,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav nav">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+                <a class="nav-link active-link" aria-current="page" href="#"
+                  >Home</a
+                >
                 <a class="nav-link" href="#about">about</a>
                 <a class="nav-link" href="#projects">projects</a>
                 <a class="nav-link" href="#contact">contact</a>
@@ -196,731 +203,562 @@
         </div>
         <div class="container projets-container">
           <ul class="filter">
-            <li class="active-category" data-filter="all">All</li>
-            <li data-filter=".templates">Templates</li>
-            <li data-filter=".js">JavaScript</li>
-            <li data-filter=".angular">Angular</li>
+            <li class="all active-category">All</li>
+            <li class="templates">Templates</li>
+            <li class="js">JavaScript</li>
+            <li class="angular">Angular</li>
           </ul>
-          <div class="work">
-            <div class="mix box angular">
-              <img src="./static/angular1.png" alt="" />
-              <div class="decripe">
-                <h3>EGY-Film</h3>
-                <p>
-                  App to display movies, search for movies, filter movies by
-                  category, and see film details like cast and trailer.
-                </p>
+          <div class="work swiper pb-4">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- start overlay -->
+          <div class="overlay" id="egy">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close"></i>
+              <h3 class="mt-2 mb-3">EGY-Film</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Authentication using email
+                  and password or using a Google account.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Display movies, search for
+                  movies, filter movies by category, and see film details like
+                  cast and trailer.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i> Responsive Design with
+                  animation and image sliders.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i> Apply core concepts
+                  like(authentication, guards pipes, services, forms, etc)
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>Angular</span>
+                <span>Animate.css</span>
+                <span>Bootstrap</span>
+                <span>Firebase</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i class="fa-solid fa-circle-xmark close"></i>
-                  <h3 class="mt-2 mb-3">EGY-Film</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Authentication using
-                      email and password or using a Google account.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Display movies, search
-                      for movies, filter movies by category, and see film
-                      details like cast and trailer.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Responsive Design with
-                      animation and image sliders.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Apply core concepts
-                      like(authentication, guards pipes, services, forms, etc)
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>Angular</span>
-                    <span>Animate.css</span>
-                    <span>Bootstrap</span>
-                    <span>Firebase</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/EGY-Film"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a target="_blank" href="https://egy-film-9dadb.web.app"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/EGY-Film"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a target="_blank" href="https://egy-film-9dadb.web.app"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box angular">
-              <img src="./static/angualr2.png" alt="" />
-              <div class="decripe">
-                <h3>Recipe-Book</h3>
-                <p>
-                  Project to manage recipes and their ingredient with the
-                  ability to add ingredients to a shopping list.
-                </p>
+          </div>
+          <div class="overlay" id="recipe">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Recipe-Book</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Authentication using email
+                  and password.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Route guard and Lazy loading.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Create , read , update and delete recipes and ingredient.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Add recipe ingredient to shopping list.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Fetching and saving data at firebase database.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>Angular</span>
+                <span>TypeScript</span>
+                <span>Bootstrap</span>
+                <span>Firebase</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Recipe-Book</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Authentication using
-                      email and password.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Route guard and Lazy
-                      loading.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Create , read , update and delete recipes and ingredient.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Add recipe ingredient to shopping list.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Fetching and saving data at firebase database.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>Angular</span>
-                    <span>TypeScript</span>
-                    <span>Bootstrap</span>
-                    <span>Firebase</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Recipe-Book"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a target="_blank" href="https://recipe-book-4a739.web.app"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Recipe-Book"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a target="_blank" href="https://recipe-book-4a739.web.app"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box js">
-              <img src="./static/whereinworld-js6.png" alt="" />
-              <div class="decripe">
-                <h3>Where in the world</h3>
-                <p>
-                  Fetch Data From Countries' API and Display It In Beautiful and
-                  Responsive Design.
-                </p>
+          </div>
+          <div class="overlay" id="world">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Where in the world</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> See all countries, Search
+                  for a country, Filter countries by region and see country
+                  detailed information on a separate page.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Click through to the border
+                  countries on the detail page.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  View the optimal layout for the interface depending on their
+                  device's screen size.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  See hover and focus states for all interactive elements on the
+                  page.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Toggle the color scheme between light and dark mode.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML & CSS</span>
+                <span>TypeScript</span>
+                <span>Bootstrap</span>
+                <span>SASS</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Where in the world</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> See all countries,
-                      Search for a country, Filter countries by region and see
-                      country detailed information on a separate page.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Click through to the
-                      border countries on the detail page.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      View the optimal layout for the interface depending on
-                      their device's screen size.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      See hover and focus states for all interactive elements on
-                      the page.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Toggle the color scheme between light and dark mode.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML & CSS</span>
-                    <span>TypeScript</span>
-                    <span>Bootstrap</span>
-                    <span>SASS</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Where-in-the-world"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Where-in-the-world/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Where-in-the-world"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Where-in-the-world/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box templates">
-              <img src="./static/landing5.png" alt="" />
-              <div class="decripe">
-                <h3>Amon</h3>
-                <p>Website for an Egyptian Travel Agency.</p>
+          </div>
+          <div class="overlay" id="amon">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Amon</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> See the cool loader when the
+                  page loads.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Smooth transition between
+                  sections using the nav links.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Amazing animation at each section of the page which gives the
+                  user a great experience.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Different image sliders with different appearance and
+                  transition way.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  View the optimal layout for the interface depending on their
+                  device's screen size.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML & CSS</span>
+                <span>JavaScript</span>
+                <span>SASS</span>
+                <span>Swiper.js</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Amon</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> See the cool loader when
-                      the page loads.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Smooth transition between
-                      sections using the nav links.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Amazing animation at each section of the page which gives
-                      the user a great experience.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Different image sliders with different appearance and
-                      transition way.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      View the optimal layout for the interface depending on
-                      their device's screen size.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML & CSS</span>
-                    <span>JavaScript</span>
-                    <span>SASS</span>
-                    <span>Swiper.js</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Amon"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Amon/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Amon"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Amon/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box templates">
-              <img src="./static/landing3.png" alt="" />
-              <div class="decripe">
-                <h3>Business Landing Page</h3>
-                <p>
-                  Responsive landing page with hover and focus effects, an
-                  animation which makes the User Experience more enjoyable.
-                </p>
+          </div>
+          <div class="overlay" id="business">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Business Landing Page</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> See hover and focus states
+                  for all interactive elements on the page.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Enjoy animation which makes
+                  the User Experience more enjoyable.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  View the optimal layout for the interface depending on their
+                  device's screen size.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Business Landing Page</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> See hover and focus
-                      states for all interactive elements on the page.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Enjoy animation which
-                      makes the User Experience more enjoyable.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      View the optimal layout for the interface depending on
-                      their device's screen size.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Business-Landing-Page"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Business-Landing-Page/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Business-Landing-Page"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Business-Landing-Page/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box templates">
-              <img src="./static/landing4.png" alt="" />
-              <div class="decripe">
-                <h3>Architect</h3>
-                <p>
-                  Interactive Page With Cool Animation Effects To Make The User
-                  Experience Enjoyable.
-                </p>
+          </div>
+          <div class="overlay" id="architect">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Architect</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> See the spinner with the
+                  cool animation effect when the page loads.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Animation at the landing to
+                  display the content. Smooth transition between sections using
+                  the nav links.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Control over nav by hamburger icon and transition between
+                  sections smoothly.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Use the slider for team members and see the cool effects
+                  created by tilt.js when hovering over a member.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  See hover and focus states for all interactive elements on the
+                  page.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>SASS</span>
+                <span>TypeScript</span>
+                <span>Tilt.js</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Architect</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> See the spinner with the
-                      cool animation effect when the page loads.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Animation at the landing
-                      to display the content. Smooth transition between sections
-                      using the nav links.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Control over nav by hamburger icon and transition between
-                      sections smoothly.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Use the slider for team members and see the cool effects
-                      created by tilt.js when hovering over a member.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      See hover and focus states for all interactive elements on
-                      the page.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>SASS</span>
-                    <span>TypeScript</span>
-                    <span>Tilt.js</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Architect"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Architect/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Architect"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Architect/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box js">
-              <img src="./static/finder-js5.png" alt="" />
-              <div class="decripe">
-                <h3>GitHub-Finder</h3>
-                <p>
-                  GitHub Finder Project Using the GitHub API to Display the User
-                  Data and Recently Created Repositories.
-                </p>
+          </div>
+          <div class="overlay" id="finder">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">GitHub-Finder</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Search for a user to get his
+                  data like account image, profile link, company, etc.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>See the alert if there is no
+                  user with this name.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Get the user's latest created repositories data.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  See a message if this user has no repositories to display.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>Bootstrap</span>
+                <span>TypeScript</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">GitHub-Finder</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Search for a user to get
-                      his data like account image, profile link, company, etc.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>See the alert if there is
-                      no user with this name.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Get the user's latest created repositories data.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      See a message if this user has no repositories to display.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>Bootstrap</span>
-                    <span>TypeScript</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/GitHub-Finder"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/GitHub-Finder/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/GitHub-Finder"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/GitHub-Finder/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box js">
-              <img src="./static/loan-js2.png" alt="" />
-              <div class="decripe">
-                <h3>Loan-Calculator</h3>
-                <p>
-                  Loan Calculator Use To Calculate Loan Total Payment, Monthly
-                  Payment and Total Interest.
-                </p>
+          </div>
+          <div class="overlay" id="loan">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Loan-Calculator</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Write the loan amount,
+                  interest, and years to repay then get the total payment,
+                  monthly payment, and total interest.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>If you forget one of the
+                  input fields then the alert will appear to warn you.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>SASS</span>
+                <span>JavaScript</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Loan-Calculator</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Write the loan amount,
-                      interest, and years to repay then get the total payment,
-                      monthly payment, and total interest.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>If you forget one of the
-                      input fields then the alert will appear to warn you.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>SASS</span>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Loan-Calculator"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Loan-Calculator/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Loan-Calculator"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Loan-Calculator/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box js">
-              <img src="./static/gusser.js3.png" alt="" />
-              <div class="decripe">
-                <h3>Number-Guesser</h3>
-                <p>
-                  Number guesser game with two options fixed or dynamic range
-                  and 3 tries of playing.
-                </p>
+          </div>
+          <div class="overlay" id="gusser">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Number-Guesser</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Select between two game
+                  options static and dynamic range with 3 tries of playing.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Static range the user guesses
+                  a number between 1 and 10.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Dynamic range the user sets the range by setting min and max
+                  numbers.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Can guess until the 3 tries finish or you guess the correct
+                  number and win.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Can play again and get a new 3 tries by clicking play again
+                  button.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>SASS</span>
+                <span>JavaScript</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Number-Guesser</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Select between two game
-                      options static and dynamic range with 3 tries of playing.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Static range the user
-                      guesses a number between 1 and 10.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Dynamic range the user sets the range by setting min and
-                      max numbers.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Can guess until the 3 tries finish or you guess the
-                      correct number and win.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Can play again and get a new 3 tries by clicking play
-                      again button.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>SASS</span>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Number-Guesser"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Number-Guesser/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Number-Guesser"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Number-Guesser/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box js">
-              <img src="./static/library-js4.png" alt="" />
-              <div class="decripe">
-                <h3>Library-Admin</h3>
-                <p>
-                  An app built with OOP architecture that helps library admin
-                  manage the library.
-                </p>
+          </div>
+          <div class="overlay" id="library">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Library-Admin</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Add book to the Books list.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Delete the book from the
+                  list.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  See the alert if you want to add a book with uncompleted
+                  fields.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Save and delete to local storage to keep the list even when
+                  reloading the page.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Library-Admin</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Add book to the Books
-                      list.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Delete the book from the
-                      list.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      See the alert if you want to add a book with uncompleted
-                      fields.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Save and delete to local storage to keep the list even
-                      when reloading the page.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Bootstrap</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Library-Admin"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Library-Admin/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Library-Admin"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Library-Admin/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box js">
-              <img src="./static/todo-js1.png" alt="" />
-              <div class="decripe">
-                <h3>Todo-List</h3>
-                <p>
-                  Todo List with lot of features like add, remove , filter
-                  tasks, or even clear the whole list.
-                </p>
+          </div>
+          <div class="overlay" id="todo">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Todo-List</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> Add New Task to the list and
+                  see an alert if you want to add to the list without writing a
+                  task.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Filter the list to reach a
+                  specific task with an insensitive search.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Remove a task from the list or even clear the whole list.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  All tasks are added to The local storage to keep them there
+                  even if the page reloaded.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>SASS</span>
+                <span>JavaScript</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Todo-List</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> Add New Task to the list
-                      and see an alert if you want to add to the list without
-                      writing a task.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>Filter the list to reach
-                      a specific task with an insensitive search.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Remove a task from the list or even clear the whole list.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      All tasks are added to The local storage to keep them
-                      there even if the page reloaded.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>SASS</span>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Todo-List"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Todo-List/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Todo-List"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Todo-List/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box templates">
-              <img src="./static/landing1.png" alt="" />
-              <div class="decripe">
-                <h3>Kasper</h3>
-                <p>landing page using HTML 5 and CSS 3.</p>
+          </div>
+          <div class="overlay" id="kasper">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Kasper</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> View the optimal layout for
+                  the interface depending on their device's screen size.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>See hover and focus states
+                  for all interactive elements on the page.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Moving between sections smoothly.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Kasper</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> View the optimal layout
-                      for the interface depending on their device's screen size.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>See hover and focus
-                      states for all interactive elements on the page.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>
-                      Moving between sections smoothly.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Kasper"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Kasper/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Kasper"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Kasper/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
-            <div class="mix box templates">
-              <img src="./static/landing2.png" alt="" />
-              <div class="decripe">
-                <h3>Leon</h3>
-                <p>my first landing page using HTML and CSS</p>
+          </div>
+          <div class="overlay" id="leon">
+            <div class="details">
+              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
+              <h3 class="mt-2 mb-3">Leon</h3>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i> View the optimal layout for
+                  the interface depending on their device's screen size.
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>See hover and focus states
+                  for all interactive elements on the page.
+                </li>
+              </ul>
+              <div class="tech mt-2">
+                <span>HTML</span>
+                <span>CSS</span>
               </div>
-              <button class="but product-details">details</button>
-              <div class="overlay" id="product-details">
-                <div class="details">
-                  <i
-                    class="fa-solid fa-circle-xmark close"
-                    id="close-details"
-                  ></i>
-                  <h3 class="mt-2 mb-3">Leon</h3>
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-check"></i> View the optimal layout
-                      for the interface depending on their device's screen size.
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check"></i>See hover and focus
-                      states for all interactive elements on the page.
-                    </li>
-                  </ul>
-                  <div class="tech mt-2">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                  </div>
-                  <div class="links mb-1 mt-3">
-                    <a
-                      target="_blank"
-                      href="https://github.com/MahmoudsMohammed/Leon"
-                      ><i class="fa-brands fa-github"></i> Github Repo</a
-                    >
-                    <a
-                      target="_blank"
-                      href="https://mahmoudsmohammed.github.io/Leon/"
-                      ><i class="fa-solid fa-globe"></i> Live Preview</a
-                    >
-                  </div>
-                </div>
+              <div class="links mb-1 mt-3">
+                <a
+                  target="_blank"
+                  href="https://github.com/MahmoudsMohammed/Leon"
+                  ><i class="fa-brands fa-github"></i> Github Repo</a
+                >
+                <a
+                  target="_blank"
+                  href="https://mahmoudsmohammed.github.io/Leon/"
+                  ><i class="fa-solid fa-globe"></i> Live Preview</a
+                >
               </div>
             </div>
           </div>
@@ -993,8 +831,8 @@
     </main>
 
     <!-- Scripts -->
-    <!-- Mixitup -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <!-- Swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <!-- Typed js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <!-- Scroll-Reveal -->

@@ -7,24 +7,195 @@ const type = new Typed('.typed', {
   loop: true,
 });
 
-// mixitup to filter projects
-let mixer = mixitup('.work', {
-  selectors: {
-    target: '.box',
+// swiper
+var swiper = new Swiper('.work', {
+  speed: 500,
+  loop: true,
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
   },
-  animation: {
-    duration: 500,
+  mousewheel: true,
+  keyboard: true,
+  centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
   },
 });
 
 // activate selected projects category
 document.querySelector('.filter').addEventListener('click', activeCategory);
-const categories = document.querySelectorAll('.filter li');
+const categories = document.querySelectorAll('.filter li'),
+  allProjects = [
+    `
+    <div class="mix box templates swiper-slide">
+    <img src="./static/landing5.png" alt="" />
+    <div class="decripe">
+      <h3>Amon</h3>
+      <p>Website for an Egyptian Travel Agency.</p>
+    </div>
+    <button class="but product-details amon">details</button>
+  </div>
+  <div class="mix box templates swiper-slide">
+    <img src="./static/landing3.png" alt="" />
+    <div class="decripe">
+      <h3>Business Landing Page</h3>
+      <p>
+        Responsive landing page with hover and focus effects, an
+        animation which makes the User Experience more enjoyable.
+      </p>
+    </div>
+    <button class="but product-details business">details</button>
+  </div>
+  <div class="mix box templates swiper-slide">
+    <img src="./static/landing4.png" alt="" />
+    <div class="decripe">
+      <h3>Architect</h3>
+      <p>
+        Interactive Page With Cool Animation Effects To Make The
+        User Experience Enjoyable.
+      </p>
+    </div>
+    <button class="but product-details architect">details</button>
+  </div>
+  <div class="mix box templates swiper-slide">
+    <img src="./static/landing1.png" alt="" />
+    <div class="decripe">
+      <h3>Kasper</h3>
+      <p>landing page using HTML 5 and CSS 3.</p>
+    </div>
+    <button class="but product-details kasper">details</button>
+  </div>
+  <div class="mix box templates swiper-slide">
+    <img src="./static/landing2.png" alt="" />
+    <div class="decripe">
+      <h3>Leon</h3>
+      <p>my first landing page using HTML and CSS</p>
+    </div>
+    <button class="but product-details leon">details</button>
+  </div>
+    `,
+    `
+    <div class="mix box js swiper-slide">
+    <img src="./static/whereinworld-js6.png" alt="" />
+    <div class="decripe">
+      <h3>Where in the world</h3>
+      <p>
+        Fetch Data From Countries' API and Display It In Beautiful
+        and Responsive Design.
+      </p>
+    </div>
+    <button class="but product-details world">details</button>
+  </div>
+  
+  <div class="mix box js swiper-slide">
+    <img src="./static/finder-js5.png" alt="" />
+    <div class="decripe">
+      <h3>GitHub-Finder</h3>
+      <p>
+        GitHub Finder Project Using the GitHub API to Display the
+        User Data and Recently Created Repositories.
+      </p>
+    </div>
+    <button class="but product-details finder">details</button>
+  </div>
+  <div class="mix box js swiper-slide">
+    <img src="./static/loan-js2.png" alt="" />
+    <div class="decripe">
+      <h3>Loan-Calculator</h3>
+      <p>
+        Loan Calculator Use To Calculate Loan Total Payment, Monthly
+        Payment and Total Interest.
+      </p>
+    </div>
+    <button class="but product-details loan">details</button>
+  </div>
+  <div class="mix box js swiper-slide">
+    <img src="./static/gusser.js3.png" alt="" />
+    <div class="decripe">
+      <h3>Number-Guesser</h3>
+      <p>
+        Number guesser game with two options fixed or dynamic range
+        and 3 tries of playing.
+      </p>
+    </div>
+    <button class="but product-details gusser">details</button>
+  </div>
+  <div class="mix box js swiper-slide">
+    <img src="./static/library-js4.png" alt="" />
+    <div class="decripe">
+      <h3>Library-Admin</h3>
+      <p>
+        An app built with OOP architecture that helps library admin
+        manage the library.
+      </p>
+    </div>
+    <button class="but product-details library">details</button>
+  </div>
+  <div class="mix box js swiper-slide">
+    <img src="./static/todo-js1.png" alt="" />
+    <div class="decripe">
+      <h3>Todo-List</h3>
+      <p>
+        Todo List with lot of features like add, remove , filter
+        tasks, or even clear the whole list.
+      </p>
+    </div>
+    <button class="but product-details todo">details</button>
+  </div>
+    `,
+    `<div class="mix box angular swiper-slide">
+    <img src="./static/angular1.png" alt="" />
+    <div class="decripe">
+      <h3>EGY-Film</h3>
+      <p>
+        App to display movies, search for movies, filter movies by
+        category, and see film details like cast and trailer.
+      </p>
+    </div>
+    <button class="but product-details egy">details</button>
+  </div>
+  <div class="mix box angular swiper-slide">
+    <img src="./static/angualr2.png" alt="" />
+    <div class="decripe">
+      <h3>Recipe-Book</h3>
+      <p>
+        Project to manage recipes and their ingredient with the
+        ability to add ingredients to a shopping list.
+      </p>
+    </div>
+    <button class="but product-details recipe">details</button>
+  </div>`,
+  ],
+  wrapper = document.querySelector('.swiper-wrapper');
+
+wrapper.innerHTML = `${allProjects.join('')}`;
 
 function activeCategory(e) {
   categories.forEach((li) => {
     if (e.target.textContent === li.textContent) {
       e.target.classList.add('active-category');
+      if (li.textContent === 'Templates') {
+        swiper.slideTo(0);
+        wrapper.innerHTML = allProjects[0];
+      } else if (li.textContent === 'JavaScript') {
+        swiper.slideTo(0);
+        wrapper.innerHTML = allProjects[1];
+      } else if (li.textContent === 'Angular') {
+        swiper.slideTo(0);
+        wrapper.innerHTML = allProjects[2];
+      } else {
+        swiper.slideTo(0);
+        wrapper.innerHTML = `${allProjects.join('')}`;
+      }
     } else if (
       e.target.textContent !== li.textContent &&
       !e.target.classList.contains('filter')
@@ -35,15 +206,15 @@ function activeCategory(e) {
 }
 
 // display project details info
-const detailsBtn = document.querySelectorAll('.product-details'),
-  details = document.querySelectorAll('#product-details'),
-  closeDetails = document.querySelectorAll('.close');
+const closeDetails = document.querySelectorAll('.close');
 
-detailsBtn.forEach((el) => {
-  el.addEventListener('click', (e) => {
-    e.target.nextElementSibling.style.display = 'block';
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('product-details')) {
+    document.getElementById(
+      e.target.classList[e.target.classList.length - 1]
+    ).style.display = 'block';
     document.body.style.overflow = 'hidden';
-  });
+  }
 });
 
 closeDetails.forEach((el) => {
@@ -55,20 +226,17 @@ closeDetails.forEach((el) => {
 
 // Scroll reveal
 const reveal = ScrollReveal({
-    distance: '100px',
-    duration: 2500,
-    reset: true,
-  }),
-  skills = document.querySelectorAll('.group>span');
+  distance: '100px',
+  duration: 2500,
+  reset: true,
+});
 
 reveal.reveal(`.content`, { origin: 'top' });
 reveal.reveal(`.computer`, { origin: 'bottom' });
-reveal.reveal(`.about .descripe`, { origin: 'top' });
-reveal.reveal(`.about .skills`, { origin: 'bottom' });
-reveal.reveal(`.about .title`, { origin: 'left' });
-skills.forEach((s, i) => {
-  reveal.reveal(s, { origin: 'bottom', delay: 50 * (i + 1) });
-});
+reveal.reveal(`.work`, { origin: 'bottom' });
+reveal.reveal(`.about .descripe *`, { origin: 'left', interval: 100 });
+reveal.reveal(`.about .title`, { origin: 'top' });
+reveal.reveal(`.about .skills *`, { origin: 'right', interval: 30 });
 reveal.reveal(`.projects .title`, { origin: 'right' });
 reveal.reveal(`.projects .filter`, { origin: 'left' });
 reveal.reveal(`.contact .title`, { origin: 'left' });
@@ -87,9 +255,7 @@ window.addEventListener('scroll', () => {
 
 // active link based on section
 window.addEventListener('scroll', () => {
-  const home =
-      document.querySelector('.landing').getBoundingClientRect().y - 85,
-    about = document.querySelector('.about').getBoundingClientRect().y - 85,
+  const about = document.querySelector('.about').getBoundingClientRect().y - 85,
     projects =
       document.querySelector('.projects').getBoundingClientRect().y - 85,
     contact = document.querySelector('.contact').getBoundingClientRect().y - 85;
@@ -104,7 +270,6 @@ window.addEventListener('scroll', () => {
   } else {
     activeLink(3);
   }
-  console.log(home, '####', about, '####', projects, '####', contact);
 });
 
 function activeLink(selected) {
