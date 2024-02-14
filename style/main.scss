@@ -65,9 +65,7 @@
         text-transform: capitalize;
         font-weight: 500;
         font-size: 18px;
-        &:hover {
-          color: var(--main-color) !important;
-        }
+        opacity: 0.3;
       }
     }
   }
@@ -689,6 +687,7 @@ footer {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
     transition: 0.5s;
   }
+
   i {
     font-size: 18px;
   }
@@ -714,6 +713,6 @@ footer {
   & {
     color: var(--main-color) !important;
     font-weight: 600 !important;
-    font-size: 20px !important;
+    opacity: 1 !important;
   }
 }

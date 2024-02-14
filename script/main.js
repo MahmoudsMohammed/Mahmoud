@@ -85,6 +85,38 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// active link based on section
+window.addEventListener('scroll', () => {
+  const home =
+      document.querySelector('.landing').getBoundingClientRect().y - 85,
+    about = document.querySelector('.about').getBoundingClientRect().y - 85,
+    projects =
+      document.querySelector('.projects').getBoundingClientRect().y - 85,
+    contact = document.querySelector('.contact').getBoundingClientRect().y - 85;
+  if (about <= 50 && projects > 50) {
+    activeLink(1);
+  } else if (projects <= 50 && contact > 50) {
+    activeLink(2);
+  } else if (contact <= 50 && contact >= 0) {
+    activeLink(3);
+  } else if (about > 50) {
+    activeLink(0);
+  } else {
+    activeLink(3);
+  }
+  console.log(home, '####', about, '####', projects, '####', contact);
+});
+
+function activeLink(selected) {
+  document.querySelectorAll('.nav-link').forEach((e, i) => {
+    if (i === selected) {
+      e.classList.add('active-link');
+    } else {
+      e.classList.remove('active-link');
+    }
+  });
+}
+
 // control over loader
 const loader = document.querySelector('.loader'),
   main = document.querySelector('main');
