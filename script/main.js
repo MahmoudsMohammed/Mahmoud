@@ -56,20 +56,25 @@ closeDetails.forEach((el) => {
 // Scroll reveal
 const reveal = ScrollReveal({
     distance: '100px',
-    duration: 2000,
+    duration: 2500,
     reset: true,
   }),
   skills = document.querySelectorAll('.group>span');
 
+reveal.reveal(`.content`, { origin: 'top' });
+reveal.reveal(`.computer`, { origin: 'bottom' });
+reveal.reveal(`.about .descripe`, { origin: 'top' });
+reveal.reveal(`.about .skills`, { origin: 'bottom' });
+reveal.reveal(`.about .title`, { origin: 'left' });
 skills.forEach((s, i) => {
-  reveal.reveal(s, { delay: 50 * (i + 1) });
+  reveal.reveal(s, { origin: 'bottom', delay: 50 * (i + 1) });
 });
-reveal.reveal(`.content,footer .info,.about .descripe`, { origin: 'top' });
-reveal.reveal('.computer, footer .container>p,.about .skills', {
-  origin: 'bottom',
-});
-reveal.reveal(`.about .title,.contact .title,.filter`, { origin: 'left' });
-reveal.reveal(`.projects .title,form`, { origin: 'right' });
+reveal.reveal(`.projects .title`, { origin: 'right' });
+reveal.reveal(`.projects .filter`, { origin: 'left' });
+reveal.reveal(`.contact .title`, { origin: 'left' });
+reveal.reveal(`.contact form`, { origin: 'right' });
+reveal.reveal(`footer .info`, { origin: 'top' });
+reveal.reveal(`footer .container>p`, { origin: 'bottom' });
 
 // control over loader
 const loader = document.querySelector('.loader'),
@@ -77,7 +82,7 @@ const loader = document.querySelector('.loader'),
 
 window.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflowY = 'hidden';
-  document.body.style.position = 'fixed';
+  window.scroll(0, 0);
 });
 setTimeout(() => {
   loader.style.top = '-100%';
@@ -85,5 +90,4 @@ setTimeout(() => {
 
 setTimeout(() => {
   document.body.style.overflowY = 'scroll';
-  document.body.style.position = 'static';
 }, 4500);

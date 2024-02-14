@@ -572,6 +572,8 @@ footer {
   > div {
     & {
       text-align: center;
+      width: fit-content;
+      max-width: 100%;
       animation: apperance 3s ease-in-out forwards;
     }
     @keyframes apperance {
@@ -589,10 +591,17 @@ footer {
   img {
     width: 200px;
     height: 200px;
+    @media (max-width: 550px) {
+      width: 150px;
+      height: 150px;
+    }
   }
   h2 {
     font-size: 40px;
     font-weight: 600;
+    @media (max-width: 550px) {
+      font-size: 28px;
+    }
   }
   p {
     font-size: 20px;
@@ -600,6 +609,9 @@ footer {
     text-transform: capitalize;
     color: var(--main-color);
     margin-bottom: 0px;
+    @media (max-width: 550px) {
+      font-size: 17px;
+    }
   }
   // start spinner
   .lds-ellipsis {
@@ -660,3 +672,12 @@ footer {
 }
 
 // end loader
+
+// active link
+.active-link {
+  & {
+    color: var(--main-color) !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+  }
+}
