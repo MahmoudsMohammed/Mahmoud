@@ -76,6 +76,15 @@ reveal.reveal(`.contact form`, { origin: 'right' });
 reveal.reveal(`footer .info`, { origin: 'top' });
 reveal.reveal(`footer .copy`, { origin: 'bottom' });
 
+// display to top
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 650) {
+    document.querySelector('.up').style.display = 'flex';
+  } else {
+    document.querySelector('.up').style.display = 'none';
+  }
+});
+
 // control over loader
 const loader = document.querySelector('.loader'),
   main = document.querySelector('main');
