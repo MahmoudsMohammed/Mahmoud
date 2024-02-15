@@ -422,6 +422,7 @@
     }
     .box {
       & {
+        transition: 0.5s 0.2s ease-in-out;
         display: block;
         padding: 20px;
         border-radius: 10px;

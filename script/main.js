@@ -10,6 +10,7 @@ const type = new Typed('.typed', {
 // swiper
 var swiper = new Swiper('.work', {
   speed: 500,
+  grabCursor: true,
   breakpoints: {
     640: {
       slidesPerView: 1,
@@ -21,15 +22,13 @@ var swiper = new Swiper('.work', {
       slidesPerView: 3,
     },
   },
-  mousewheel: true,
   keyboard: true,
-  centeredSlides: true,
   pagination: {
     el: '.swiper-pagination',
     dynamicBullets: true,
   },
 });
-swiper.slideTo(1);
+swiper.slideTo(0);
 // activate selected projects category
 document.querySelector('.filter').addEventListener('click', activeCategory);
 const categories = document.querySelectorAll('.filter li'),
@@ -183,16 +182,16 @@ function activeCategory(e) {
     if (e.target.textContent === li.textContent) {
       e.target.classList.add('active-category');
       if (li.textContent === 'Templates') {
-        swiper.slideTo(1);
+        swiper.slideTo(0);
         wrapper.innerHTML = allProjects[0];
       } else if (li.textContent === 'JavaScript') {
-        swiper.slideTo(1);
+        swiper.slideTo(0);
         wrapper.innerHTML = allProjects[1];
       } else if (li.textContent === 'Angular') {
-        swiper.slideTo(1);
+        swiper.slideTo(0);
         wrapper.innerHTML = allProjects[2];
       } else {
-        swiper.slideTo(1);
+        swiper.slideTo(0);
         wrapper.innerHTML = `${allProjects.join('')}`;
       }
     } else if (
