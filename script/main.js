@@ -11,6 +11,7 @@ const type = new Typed('.typed', {
 var swiper = new Swiper('.work', {
   speed: 500,
   grabCursor: true,
+  mousewheel: true,
   breakpoints: {
     640: {
       slidesPerView: 1,
