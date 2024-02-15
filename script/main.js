@@ -10,7 +10,6 @@ const type = new Typed('.typed', {
 // swiper
 var swiper = new Swiper('.work', {
   speed: 500,
-  loop: true,
   breakpoints: {
     640: {
       slidesPerView: 1,
@@ -30,7 +29,7 @@ var swiper = new Swiper('.work', {
     dynamicBullets: true,
   },
 });
-
+swiper.slideTo(1);
 // activate selected projects category
 document.querySelector('.filter').addEventListener('click', activeCategory);
 const categories = document.querySelectorAll('.filter li'),
@@ -184,16 +183,16 @@ function activeCategory(e) {
     if (e.target.textContent === li.textContent) {
       e.target.classList.add('active-category');
       if (li.textContent === 'Templates') {
-        swiper.slideTo(0);
+        swiper.slideTo(1);
         wrapper.innerHTML = allProjects[0];
       } else if (li.textContent === 'JavaScript') {
-        swiper.slideTo(0);
+        swiper.slideTo(1);
         wrapper.innerHTML = allProjects[1];
       } else if (li.textContent === 'Angular') {
-        swiper.slideTo(0);
+        swiper.slideTo(1);
         wrapper.innerHTML = allProjects[2];
       } else {
-        swiper.slideTo(0);
+        swiper.slideTo(1);
         wrapper.innerHTML = `${allProjects.join('')}`;
       }
     } else if (
@@ -281,6 +280,54 @@ function activeLink(selected) {
     }
   });
 }
+
+// email js
+const form = document.querySelector('form'),
+  name = document.getElementById('name'),
+  email = document.getElementById('email'),
+  message = document.getElementById('message'),
+  alert = document.querySelector('form>p');
+
+form.addEventListener('submit', (e) => {
+  if (name.value === '' || email.value === '' || message.value === '') {
+    alert.textContent = 'Please, Fill All The Input Fields ⛔️';
+    alert.className = 'error';
+    alert.style.display = 'block';
+  } else if (
+    !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+      email.value
+    )
+  ) {
+    alert.textContent = 'Please, enter valid email 📧';
+    alert.className = 'error';
+    alert.style.display = 'block';
+  } else {
+    emailjs
+      .sendForm(
+        'service_cg0kdwt',
+        'template_3kqzz2c',
+        '#form',
+        '0RGJJ45VdilTT11ha'
+      )
+      .then(() => {
+        alert.textContent =
+          'message sent I will get back to you as soon as possible ✅';
+        alert.className = 'accept';
+        alert.style.display = 'block';
+        // clear fields
+        name.value = '';
+        email.value = '';
+        message.value = '';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  setTimeout(() => {
+    alert.style.display = 'none';
+  }, 3500);
+  e.preventDefault();
+});
 
 // control over loader
 const loader = document.querySelector('.loader'),
