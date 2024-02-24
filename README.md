@@ -19,8 +19,9 @@ Users should be able to:
 - See the cool loader when the page loads.
 - Smooth transition between sections using the nav links.
 - Amazing animation at each section of the page which gives the user a great experience.
-- Filter projects and see every project's details.
+-  Go through projects, filter them, and see every project's details.
 - Use the form to send me a direct email.
+- Can contact me directly via WhatsApp.  
 - View the optimal layout for the interface depending on their device's screen size.
 
 ### Links
