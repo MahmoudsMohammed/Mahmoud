@@ -163,6 +163,16 @@ const categories = document.querySelectorAll('.filter li'),
     <button class="but product-details egy">details</button>
   </div>
   <div class="mix box angular swiper-slide">
+    <img src="./static/crypto.png" alt="" />
+    <div class="decripe">
+      <h3>Crypto</h3>
+      <p>
+        Single Page App using Angular and Angular Material that displays the cryptocurrencies.
+      </p>
+    </div>
+    <button class="but product-details crypto">details</button>
+  </div>
+  <div class="mix box angular swiper-slide">
     <img src="./static/angualr2.png" alt="" />
     <div class="decripe">
       <h3>Recipe-Book</h3>
