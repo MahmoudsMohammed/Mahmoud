@@ -419,6 +419,8 @@
     }
     .swiper-pagination-bullet-active {
       background-color: var(--main-color);
+      width: 10px;
+      height: 10px;
     }
     .box {
       & {

@@ -9,9 +9,9 @@ const type = new Typed('.typed', {
 
 // swiper
 var swiper = new Swiper('.work', {
+  slidesPerView: 'auto',
   speed: 500,
   grabCursor: true,
-  mousewheel: true,
   breakpoints: {
     640: {
       slidesPerView: 1,
