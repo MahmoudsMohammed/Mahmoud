@@ -1,0 +1,58 @@
+@use '../tokens' as *;
+
+.about {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+
+    @include down($bp-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__lead {
+    font-family: var(--font-head);
+    font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.75rem;
+  }
+
+  &__body {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+  }
+
+  &__card {
+    padding: 0.5rem 1.5rem 1.5rem;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.93rem;
+    text-align: right;
+
+    .mono {
+      text-align: left;
+      flex: none;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent-2);
+    font-size: 0.88rem;
+  }
+}

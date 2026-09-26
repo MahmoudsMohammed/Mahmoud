@@ -1,0 +1,50 @@
+$bp-xl: 1200px;
+$bp-lg: 992px;
+$bp-md: 768px;
+$bp-sm: 480px;
+
+@mixin down($bp) {
+  @media (max-width: ($bp - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin fine-pointer {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+:root {
+  --bg: #0a1114;
+  --bg-2: #0c1518;
+  --surface: #0f191d;
+  --surface-2: #13201f;
+  --border: rgba(167, 243, 208, 0.08);
+  --border-strong: rgba(167, 243, 208, 0.18);
+  --text: #e6f1ee;
+  --text-muted: #8a9c98;
+  --text-dim: #5d6f6b;
+  --accent: #2dd4a7;
+  --accent-2: #5eead4;
+  --accent-soft: rgba(45, 212, 167, 0.12);
+  --accent-glow: rgba(45, 212, 167, 0.35);
+
+  --font-head: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 2rem);
+  --nav-h: 72px;
+  --section-y: clamp(5rem, 11vw, 8.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

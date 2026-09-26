@@ -1,0 +1,62 @@
+@use '../tokens' as *;
+
+.footer {
+  position: relative;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+
+  &__marquee {
+    padding-block: clamp(2rem, 5vw, 3.5rem);
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    width: max-content;
+    padding-right: clamp(1.5rem, 4vw, 3rem);
+    font-family: var(--font-head);
+    font-size: clamp(3rem, 11vw, 9rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+
+    span:nth-of-type(odd) {
+      color: var(--text);
+    }
+
+    span:nth-of-type(even) {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--border-strong);
+    }
+
+    i {
+      font-size: 0.35em;
+      color: var(--accent);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding-block: 2rem;
+
+    .nav__brand {
+      margin-right: 0;
+    }
+  }
+
+  &__copy {
+    font-size: 0.85rem;
+  }
+}
+
+.to-top {
+  background: var(--accent-soft);
+  color: var(--accent) !important;
+}

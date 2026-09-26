@@ -1,0 +1,149 @@
+@use '../tokens' as *;
+
+.contact {
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: clamp(1.75rem, 5vw, 3.5rem);
+    overflow: hidden;
+    background:
+      radial-gradient(600px circle at 0% 0%, rgba(45, 212, 167, 0.1), transparent 60%),
+      linear-gradient(180deg, var(--surface), var(--bg-2));
+
+    @include down($bp-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.1rem;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 2rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+    }
+
+    a {
+      overflow-wrap: anywhere;
+      transition: color 0.25s;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
+.copy-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: 8px;
+  color: var(--text-muted);
+  transition:
+    color 0.25s,
+    background-color 0.25s;
+
+  &:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+}
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+
+  &__error {
+    min-height: 1.4em;
+    color: #f87171;
+    font-size: 0.88rem;
+  }
+
+  &__submit {
+    justify-self: start;
+
+    @include down($bp-sm) {
+      justify-self: stretch;
+    }
+  }
+}
+
+.field {
+  position: relative;
+  display: grid;
+  gap: 0.45rem;
+
+  label {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    transition: color 0.3s;
+  }
+
+  &:focus-within label {
+    color: var(--accent);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(10, 17, 20, 0.7);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      color: var(--text-dim);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--border-strong);
+    }
+  }
+
+  &__line {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  &:focus-within &__line {
+    transform: scaleX(1);
+  }
+
+  &.is-invalid input,
+  &.is-invalid textarea {
+    border-color: rgba(248, 113, 113, 0.6);
+  }
+}

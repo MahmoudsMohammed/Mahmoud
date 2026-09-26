@@ -1,59 +1,53 @@
-# Mahmoud
-My portfolio project displays all my projects and skills amazingly and creatively 😀.
-## Table of contents
+# Mahmoud Ayoub — Portfolio
 
-- [Overview](#overview)
-  - [Mahmoud features](#Mahmoud-features)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
+Personal portfolio of Mahmoud Ayoub, Senior Frontend Engineer. A dark, motion-rich single page built with Vite, vanilla JavaScript, SCSS and GSAP.
 
-## Overview
+Live site: [mahmoudsmohammed.github.io/Mahmoud](https://mahmoudsmohammed.github.io/Mahmoud/)
 
-### Mahmoud features
+## Highlights
 
-Users should be able to:
+- Preloader with a SplitText name reveal and a clip-path wipe into the hero.
+- Hero with a masked headline reveal, a gradient sweep, count-up stats and an animated SVG "orbit" of the stack (DrawSVG rings, orbiting chips, mouse tilt).
+- ScrollSmoother on desktop, a scroll progress bar, a nav that hides on scroll with a sliding active-link indicator, and a full-screen mobile menu.
+- Custom cursor and magnetic buttons on pointer devices.
+- Scroll-scrubbed word highlighting, an experience switcher animated with Flip, 3D-tilt skill cards, a scroll-velocity marquee, pinned and stacked case-study cards, and spotlight capability cards.
+- Contact form powered by EmailJS with validation, shake feedback and an animated toast.
+- Fully responsive, with a `prefers-reduced-motion` mode that falls back to simple fades.
 
-- See the cool loader when the page loads.
-- Smooth transition between sections using the nav links.
-- Amazing animation at each section of the page which gives the user a great experience.
--  Go through projects, filter them, and see every project's details.
-- Use the form to send me a direct email.
-- Can contact me directly via WhatsApp.  
-- View the optimal layout for the interface depending on their device's screen size.
+## Tech
 
-### Links
+Vite, vanilla JavaScript (ES modules), SCSS, GSAP (ScrollTrigger, ScrollSmoother, SplitText, DrawSVG, Flip, ScrollTo), EmailJS and Font Awesome.
 
-- Live Site URL : [Mahmoud](https://mahmoudsmohammed.github.io/Mahmoud)
+## Project structure
 
-## My process
+```
+index.html              page markup
+src/main.js             entry point
+src/data/content.js     CV-driven content (experience, projects, skills, ...)
+src/render.js           renders data into the page
+src/contact.js          form validation, EmailJS and toast
+src/animations/         GSAP setup, preloader, hero, nav, cursor, sections
+src/styles/             SCSS tokens, base, components and section styles
+public/cv/              downloadable CV
+```
 
-### Built with
+To update the content, edit `src/data/content.js` and replace `public/cv/Mahmoud-Ayoub-CV.pdf`.
 
-- HTML 5
-- CSS 3
-- SASS
-- Bootstrap
-- JavaScript
-- Font Awesome
-- Swiper.js
-- Scroll-Reveal
-- Email js
-- Typed js
+## Scripts
 
-### What I learned
+```bash
+npm install
+npm run dev      # http://localhost:5173/Mahmoud/
+npm run build    # outputs dist/
+npm run preview
+```
 
-- How to structure the project folders and files.
-- Using Git and Github.
-- Use SASS which makes Nesting and Variables and more of Organized features.
-- Responsive Design based on the viewport.
-- Using a lot of JavaScript helpful libraries.
-- Create validation for form input fields.
-- How to Manipulate the DOM.
+## Deployment
 
-## Author
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes `dist/` to GitHub Pages. In the repository settings, set **Pages > Source** to **GitHub Actions** once.
 
-- Linkedin - [Mahmoud Sayed](https://www.linkedin.com/in/mahmoud-sayed-b85536217/)
-- Codewars - [@MahmoudsMohammed](https://www.codewars.com/users/MahmoudsMohammed)
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/mahmoud-s-ayoub/)
+- [GitHub](https://github.com/MahmoudsMohammed)
+- mahmoudsmohammed24@gmail.com

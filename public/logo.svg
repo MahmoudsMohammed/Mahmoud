@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mahmoud Ayoub">
+  <rect width="64" height="64" fill="#2dd4a7"/>
+  <!-- Left peak -->
+  <path fill="#04201a" d="M9 48 L22 16 L35 48 H27.6 L22 32.5 L16.4 48 Z"/>
+  <!-- Right peak (overlaps left) -->
+  <path fill="#04201a" d="M29 48 L42 16 L55 48 H47.6 L42 32.5 L36.4 48 Z"/>
+</svg>

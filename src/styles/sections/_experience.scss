@@ -1,0 +1,230 @@
+@use '../tokens' as *;
+
+.exp {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 2rem;
+  align-items: start;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  &__rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-left: 1.5rem;
+
+    @include down($bp-lg) {
+      flex-direction: row;
+      padding-left: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin-inline: calc(var(--gutter) * -1);
+      padding-inline: var(--gutter);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 1.4rem;
+    bottom: 1.4rem;
+    left: 5px;
+    width: 1px;
+    background: var(--border-strong);
+
+    @include down($bp-lg) {
+      display: none;
+    }
+  }
+
+  &__line-fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--accent), var(--accent-2));
+    transform-origin: top;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  &__tab {
+    position: relative;
+    display: grid;
+    gap: 0.1rem;
+    padding: 0.9rem 1.1rem;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition:
+      color 0.3s,
+      border-color 0.3s;
+
+    &:hover:not(.is-active) {
+      border-color: var(--border);
+    }
+
+    @include down($bp-lg) {
+      flex: none;
+      padding: 0.7rem 1rem;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    left: calc(-1.5rem + 1px);
+    top: 1.35rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    transition:
+      background-color 0.3s,
+      border-color 0.3s,
+      box-shadow 0.3s;
+
+    .is-active & {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    @include down($bp-lg) {
+      display: none;
+    }
+  }
+
+  &__tab-company {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    transition: color 0.3s;
+
+    .is-active & {
+      color: var(--text);
+    }
+  }
+
+  &__tab-period {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+
+  &__indicator {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border-strong);
+    pointer-events: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 22%;
+      bottom: 22%;
+      width: 3px;
+      border-radius: 3px;
+      background: var(--accent);
+
+      @include down($bp-lg) {
+        top: auto;
+        bottom: -1px;
+        left: 22%;
+        right: 22%;
+        width: auto;
+        height: 3px;
+      }
+    }
+  }
+
+  &__panels {
+    position: relative;
+    display: grid;
+  }
+
+  &__panel {
+    grid-area: 1 / 1;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  &__role {
+    margin-top: 0.4rem;
+    font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+
+    i {
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+  }
+
+  &__summary {
+    color: var(--text);
+    margin-bottom: 1.1rem;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    li {
+      display: flex;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    i {
+      color: var(--accent);
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.training {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}

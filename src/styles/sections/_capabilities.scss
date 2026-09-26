@@ -1,0 +1,91 @@
+@use '../tokens' as *;
+
+.cap__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cap {
+  --mx: 50%;
+  --my: 50%;
+  padding: 1.5rem;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(320px circle at var(--mx) var(--my), rgba(45, 212, 167, 0.14), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: var(--border-strong);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.1rem;
+  }
+
+  h3 {
+    position: relative;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+}
+
+.community__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.community__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.6rem;
+
+  @include down($bp-lg) {
+    flex-direction: row;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+  }
+}

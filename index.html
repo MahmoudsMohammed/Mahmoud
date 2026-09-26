@@ -1,908 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google Font -->
+    <title>Mahmoud Ayoub | Senior Frontend Engineer | Angular, Micro-frontends, SSR</title>
+    <meta
+      name="description"
+      content="Mahmoud Ayoub, Senior Frontend Engineer at e& UAE. Building scalable Angular micro-frontends, SSR experiences, real-time dashboards and data-rich interfaces."
+    />
+    <meta name="theme-color" content="#0a1114" />
+    <meta property="og:title" content="Mahmoud Ayoub | Senior Frontend Engineer" />
+    <meta
+      property="og:description"
+      content="Scalable Angular micro-frontends, SSR, real-time data and design systems."
+    />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font-Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="style/bootstrap.css" />
-    <!-- Normalize Css -->
-    <link rel="stylesheet" href="style/normalize.css" />
-    <!-- swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
-    />
-    <!-- main Css -->
-    <link rel="stylesheet" href="style/main.css" />
-    <!-- icon -->
-    <link rel="icon" href="./static/logo.png" type="image/x-icon" />
-    <title>
-      Mahmoud | Software Engineer | Front-end Developer | Angular Developer
-    </title>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
-    <!-- start loader -->
-    <div class="loader">
-      <div>
-        <img src="./static/logo.png" alt="" />
-        <h2>Mahmoud Mohammed</h2>
-        <p>A front-end Angular Developer</p>
-        <div class="lds-ellipsis spinner">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Preloader -->
+    <div class="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <img class="preloader__logo" src="./logo.svg" alt="" width="56" height="56" />
+        <h2 class="preloader__name">Mahmoud Ayoub</h2>
+        <p class="preloader__role mono">Senior Frontend Engineer</p>
+      </div>
+      <div class="preloader__bar"><span></span></div>
+      <span class="preloader__count mono">0</span>
+    </div>
+
+    <!-- Fixed UI -->
+    <div class="progress" aria-hidden="true"><span></span></div>
+    <div class="cursor" aria-hidden="true">
+      <span class="cursor__dot"></span>
+      <span class="cursor__ring"><span class="cursor__label"></span></span>
+    </div>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a href="#top" class="nav__brand" data-scroll aria-label="Mahmoud Ayoub, back to top">
+          <img class="nav__logo" src="./logo.svg" alt="" width="38" height="38" />
+          <span class="nav__name">Mahmoud Ayoub</span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#about" data-scroll>About</a>
+          <a href="#experience" data-scroll>Experience</a>
+          <a href="#skills" data-scroll>Skills</a>
+          <a href="#work" data-scroll>Work</a>
+          <a href="#contact" data-scroll>Contact</a>
+          <span class="nav__indicator" aria-hidden="true"></span>
+        </nav>
+        <a class="btn btn--sm btn--ghost nav__cta" href="cv/Mahmoud-Ayoub-CV.pdf" target="_blank" rel="noopener" data-magnetic>
+          <i class="fa-solid fa-download"></i> CV
+        </a>
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu" id="menu" aria-hidden="true">
+      <nav class="menu__links" aria-label="Mobile">
+        <a href="#about" data-scroll><span class="mono">01</span>About</a>
+        <a href="#experience" data-scroll><span class="mono">02</span>Experience</a>
+        <a href="#skills" data-scroll><span class="mono">03</span>Skills</a>
+        <a href="#work" data-scroll><span class="mono">04</span>Work</a>
+        <a href="#contact" data-scroll><span class="mono">05</span>Contact</a>
+      </nav>
+      <div class="menu__foot">
+        <a href="mailto:mahmoudsmohammed24@gmail.com">mahmoudsmohammed24@gmail.com</a>
+        <div class="socials">
+          <a href="https://github.com/MahmoudsMohammed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mahmoud-s-ayoub/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
-    <!-- end loader -->
 
-    <main>
-      <!-- start landing -->
-      <div class="landing">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container py-1">
-            <a class="navbar-brand logo" href="#">
-              <img src="static/logo.png" alt="" />Mahmoud
+    <div class="toast" role="status" aria-live="polite">
+      <svg class="toast__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M7 12.5l3.2 3.2L17 9" />
+      </svg>
+      <span class="toast__text"></span>
+    </div>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main id="main">
+          <!-- Hero -->
+          <section class="hero" id="top">
+            <div class="bg-grid" aria-hidden="true"></div>
+            <div class="container hero__inner">
+              <div class="hero__content">
+                <p class="pill hero__pill">
+                  <span class="dot dot--live"></span> Senior Frontend Engineer @ e&amp; UAE
+                </p>
+                <h1 class="hero__title">
+                  Building <span class="grad">scalable, performant</span>, modern frontend experiences.
+                </h1>
+                <p class="hero__text">
+                  I'm <strong>Mahmoud Ayoub</strong>, a frontend engineer who turns complex products into
+                  fast, reliable interfaces with Angular micro-frontends, SSR, real-time data and design
+                  systems that scale.
+                </p>
+                <div class="hero__actions">
+                  <a href="#work" class="btn btn--primary" data-scroll data-magnetic>
+                    View my work <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                  <a href="cv/Mahmoud-Ayoub-CV.pdf" class="btn btn--ghost" target="_blank" rel="noopener" data-magnetic>
+                    <i class="fa-solid fa-download"></i> Download CV
+                  </a>
+                </div>
+                <div class="hero__socials socials">
+                  <a href="https://github.com/MahmoudsMohammed" target="_blank" rel="noopener" aria-label="GitHub" data-magnetic><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/mahmoud-s-ayoub/" target="_blank" rel="noopener" aria-label="LinkedIn" data-magnetic><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="mailto:mahmoudsmohammed24@gmail.com" aria-label="Email" data-magnetic><i class="fa-solid fa-envelope"></i></a>
+                  <span class="hero__location mono"><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</span>
+                </div>
+              </div>
+              <div class="hero__visual">
+                <div class="orbit" id="orbit"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="stats" id="stats"></div>
+            </div>
+            <a href="#about" class="hero__scroll mono" data-scroll aria-label="Scroll to about">
+              <span>scroll</span><span class="hero__scroll-line"></span>
             </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i
-                class="fa-solid fa-bars-staggered navbar-toggler-icon toggle"
-              ></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav nav">
-                <a class="nav-link active-link" aria-current="page" href="#"
-                  >Home</a
-                >
-                <a class="nav-link" href="#about">about</a>
-                <a class="nav-link" href="#projects">projects</a>
-                <a class="nav-link" href="#contact">contact</a>
+          </section>
+
+          <!-- About -->
+          <section class="section about" id="about">
+            <div class="container">
+              <header class="section__head">
+                <p class="section__index mono">01 / About</p>
+                <h2 class="section__title">Frontend that scales.</h2>
+                <p class="section__sub">Senior Frontend Engineer focused on Angular, TypeScript and RxJS — building high-performance, responsive apps with a Computer Science foundation.</p>
+              </header>
+              <div class="about__grid">
+                <div class="about__text">
+                  <p class="about__lead" data-scrub-text>
+                    Senior Frontend Engineer specializing in building scalable, high-performance, responsive
+                    and user-friendly web applications using Angular, TypeScript, RxJS, NgRx, HTML, and CSS.
+                    Experienced in developing complex web-based solutions and collaborating within Agile environments.
+                  </p>
+                  <p class="about__body">
+                    Holds a diploma in Computer Science, providing a strong foundation in software development
+                    principles and best practices. Committed to continuous learning, staying updated with industry
+                    trends, and enhancing technical skills to deliver high-quality solutions.
+                  </p>
+                </div>
+                <aside class="about__card card">
+                  <div class="about__row"><span class="mono muted">Role</span><span>Senior Frontend Engineer</span></div>
+                  <div class="about__row"><span class="mono muted">Company</span><span>e&amp; UAE</span></div>
+                  <div class="about__row"><span class="mono muted">Based in</span><span>Cairo, Egypt</span></div>
+                  <div class="about__row"><span class="mono muted">Education</span><span>B.Sc. CS, Assiut University</span></div>
+                  <div class="about__row"><span class="mono muted">GPA</span><span>3.11 / 4</span></div>
+                  <div class="about__row"><span class="mono muted">Focus</span><span>Angular · MFE · SSR · RxJS</span></div>
+                  <div class="about__status"><span class="dot dot--live"></span> Open to interesting frontend challenges</div>
+                </aside>
               </div>
             </div>
-          </div>
-        </nav>
-        <div class="start">
-          <div class="container start-container">
-            <div class="content">
-              <p class="info">
-                Hello,It's Me <br />
-                <span class="name">Mahmoud Mohammed 👋 </span><br />
-                And I'm a <span class="typed"></span>
-              </p>
-              <div class="social">
-                <a href="https://github.com/MahmoudsMohammed" target="_blank"
-                  ><i class="fa-brands fa-github"></i> Github</a
-                >
-                <a
-                  href="https://www.linkedin.com/in/mahmoud-sayed-mohammed/"
-                  target="_blank"
-                  ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
-                >
-                <a href="mailto:mahmoudsmohammed24@gmail.com" target="_blank"
-                  ><i class="fa-solid fa-envelope"></i> Email</a
-                >
+          </section>
+
+          <!-- Experience -->
+          <section class="section experience" id="experience">
+            <div class="container">
+              <header class="section__head">
+                <p class="section__index mono">02 / Experience</p>
+                <h2 class="section__title">Where the work happened.</h2>
+                <p class="section__sub">Four companies, three countries, one constant: shipping frontends that hold up in production.</p>
+              </header>
+              <div class="exp" id="experience-app"></div>
+              <h3 class="subhead mono">Internships &amp; training</h3>
+              <div class="training" id="training"></div>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section class="section skills" id="skills">
+            <div class="container">
+              <header class="section__head">
+                <p class="section__index mono">03 / Skills</p>
+                <h2 class="section__title">Tools in daily use.</h2>
+                <p class="section__sub">The stack I reach for when building, scaling and shipping frontends.</p>
+              </header>
+              <div class="skills__grid" id="skills-grid"></div>
+            </div>
+            <div class="marquee" id="marquee" aria-hidden="true"></div>
+          </section>
+
+          <!-- Work -->
+          <section class="section work" id="work">
+            <div class="container">
+              <header class="section__head">
+                <p class="section__index mono">04 / Featured work</p>
+                <h2 class="section__title">Featured work.</h2>
+                <p class="section__sub">Production products I helped design, build and ship. Client code is private, so here is the story behind each one.</p>
+              </header>
+              <div class="work__stack" id="work-stack"></div>
+            </div>
+          </section>
+
+          <!-- Capabilities -->
+          <section class="section capabilities" id="capabilities">
+            <div class="container">
+              <header class="section__head">
+                <p class="section__index mono">05 / Capabilities</p>
+                <h2 class="section__title">What the work involves.</h2>
+                <p class="section__sub">The problems I solve most often, and am happy to solve for your team.</p>
+              </header>
+              <div class="cap__grid" id="cap-grid"></div>
+            </div>
+          </section>
+
+          <!-- Community -->
+          <section class="section community" id="community">
+            <div class="container">
+              <header class="section__head">
+                <p class="section__index mono">06 / Beyond the code</p>
+                <h2 class="section__title">Ready to mentor, always learning.</h2>
+                <p class="section__sub">Competitive programming shaped how I think about problems, and teaching it keeps me sharp.</p>
+              </header>
+              <div class="community__list" id="community-list"></div>
+            </div>
+          </section>
+
+          <!-- Contact -->
+          <section class="section contact" id="contact">
+            <div class="container">
+              <div class="contact__box card">
+                <div class="contact__info">
+                  <p class="section__index mono">07 / Contact</p>
+                  <h2 class="contact__title">Let's build something reliable.</h2>
+                  <p class="muted">
+                    Have a product that needs a solid frontend, a migration to modern Angular, or an extra senior
+                    pair of hands? Send a message and I'll get back to you soon.
+                  </p>
+                  <ul class="contact__list">
+                    <li>
+                      <span class="icon-box"><i class="fa-solid fa-envelope"></i></span>
+                      <a href="mailto:mahmoudsmohammed24@gmail.com">mahmoudsmohammed24@gmail.com</a>
+                      <button class="copy-btn" type="button" data-copy="mahmoudsmohammed24@gmail.com" aria-label="Copy email">
+                        <i class="fa-regular fa-copy"></i>
+                      </button>
+                    </li>
+                    <li>
+                      <span class="icon-box"><i class="fa-brands fa-whatsapp"></i></span>
+                      <a href="https://api.whatsapp.com/send?phone=201099088962&amp;text=Hello%20Mahmoud" target="_blank" rel="noopener">+20 109 908 8962</a>
+                    </li>
+                    <li>
+                      <span class="icon-box"><i class="fa-brands fa-linkedin-in"></i></span>
+                      <a href="https://www.linkedin.com/in/mahmoud-s-ayoub/" target="_blank" rel="noopener">in/mahmoud-s-ayoub</a>
+                    </li>
+                  </ul>
+                </div>
+                <form class="form" id="contact-form" novalidate>
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    <span class="field__line"></span>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+                    <span class="field__line"></span>
+                  </div>
+                  <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                    <span class="field__line"></span>
+                  </div>
+                  <p class="form__error" role="alert"></p>
+                  <button type="submit" class="btn btn--primary form__submit" data-magnetic>
+                    <span class="form__submit-text">Send message</span> <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </form>
               </div>
-              <a
-                href="https://drive.google.com/file/d/16sQB4e7BVl6Aj2OPNmH17Jerd2AInvzJ/view?usp=sharing"
-                target="_blank"
-                download="Mahmoud-Mohammed"
-                class="but"
-                >Download CV</a
-              >
             </div>
-            <div class="computer">
-              <img src="./static/img.svg" alt="" />
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div class="footer__marquee" aria-hidden="true">
+            <div class="footer__track">
+              <span>Mahmoud Ayoub</span><i class="fa-solid fa-asterisk"></i>
+              <span>Senior Frontend Engineer</span><i class="fa-solid fa-asterisk"></i>
+              <span>Mahmoud Ayoub</span><i class="fa-solid fa-asterisk"></i>
+              <span>Senior Frontend Engineer</span><i class="fa-solid fa-asterisk"></i>
             </div>
           </div>
-        </div>
+          <div class="container footer__inner">
+            <div class="nav__brand">
+              <img class="nav__logo" src="./logo.svg" alt="" width="38" height="38" />
+              <span class="nav__name">Mahmoud Ayoub</span>
+            </div>
+            <p class="muted footer__copy">&copy; <span id="year"></span> Mahmoud Ayoub.</p>
+            <div class="socials">
+              <a href="https://github.com/MahmoudsMohammed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/mahmoud-s-ayoub/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:mahmoudsmohammed24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#top" class="to-top" data-scroll aria-label="Back to top" data-magnetic><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+          </div>
+        </footer>
       </div>
-      <!-- end landing -->
+    </div>
 
-      <!-- Start about -->
-      <div class="about" id="about">
-        <div class="title">
-          <h3>about me</h3>
-          <p>
-            Here you will find more information about me, what I do, and my
-            current skills mostly in terms of programming and technology
-          </p>
-        </div>
-        <div class="container about-container">
-          <div class="descripe">
-            <h3>My Story 😃</h3>
-            <p>
-              <span class="imp">A software engineer</span> who started as a
-              back-end developer but by the day found his passion in front-end
-              development. <span class="imp">enjoys</span> converting designs
-              and ideas into usable, scalable, and unique websites. when he
-              found his passion he <span class="imp">decided</span> to keep
-              learning and stay up-to-date with front-end trends and
-              technologies to
-              <span class="imp">improve</span>
-              his front-end development career.
-            </p>
-            <h3>Education 👨‍🎓</h3>
-            <p>
-              Bachelor in Computer Science <br />
-              <span class="imp">3.11 / 4 GPA</span><br />
-              Assiut University
-            </p>
-            <a href="#contact" class="but">Contact me</a>
-          </div>
-          <div class="skills">
-            <h3>my skills 👩‍💻</h3>
-            <div class="group mb-4">
-              <span><i class="fa-brands fa-html5"></i> <span>HTML</span></span>
-              <span
-                ><i class="fa-brands fa-css3-alt"></i> <span>CSS</span></span
-              >
-              <span
-                ><i class="fa-brands fa-square-js"></i>
-                <span>JavaScript</span></span
-              >
-              <span
-                ><i class="fa-brands fa-bootstrap"></i>
-                <span>Bootstrap</span></span
-              >
-              <span><i class="fa-brands fa-sass"></i> <span>SASS</span></span>
-              <span
-                ><img src="./static/ts.png" alt="" />
-                <span>TypeScript</span></span
-              >
-              <span
-                ><i class="fa-brands fa-angular"></i> <span>Angular</span></span
-              >
-              <span><i class="fa-brands fa-git"></i> <span>Git</span></span>
-              <span
-                ><i class="fa-brands fa-github"></i> <span>Github</span></span
-              >
-              <span
-                ><i class="fa-solid fa-fire"></i> <span>Firebase</span></span
-              >
-              <span
-                ><img src="./static/responsive.png" alt="" />
-                <span>Responsive Design</span></span
-              >
-              <span
-                ><img src="./static/terminal.png" alt="" />
-                <span>Terminal</span></span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end about -->
-
-      <!-- start projects -->
-      <div class="projects" id="projects">
-        <div class="title">
-          <h3>projects</h3>
-          <p>
-            Here you will find some of the projects that I created with each
-            project containing its own case study
-          </p>
-        </div>
-        <div class="container projets-container">
-          <ul class="filter">
-            <li class="all active-category">All</li>
-            <li class="templates">Templates</li>
-            <li class="js">JavaScript</li>
-            <li class="angular">Angular</li>
-          </ul>
-          <div class="work swiper pb-4">
-            <div class="swiper-wrapper"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <!-- start overlay -->
-          <div class="overlay" id="egy">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close"></i>
-              <h3 class="mt-2 mb-3">EGY-Film</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Authentication using email
-                  and password or using a Google account.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Display movies, search for
-                  movies, filter movies by category, and see film details like
-                  cast and trailer.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i> Responsive Design with
-                  animation and image sliders.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i> Apply core concepts
-                  like(authentication, guards pipes, services, forms, etc)
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>Angular</span>
-                <span>Animate.css</span>
-                <span>Bootstrap</span>
-                <span>Firebase</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/EGY-Film"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a target="_blank" href="https://egy-film-9dadb.web.app"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="crypto">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close"></i>
-              <h3 class="mt-2 mb-3">Crypto</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i>See the trending
-                  cryptocurrencies in the slider at the banner.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>See all the cryptocurrencies
-                  in the table and make operations on them like sorting,
-                  pagination, and filtering.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>See the cryptocurrency
-                  details information by clicking on its row in the table.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>See the dynamic chart which
-                  represents the cryptocurrency price change.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Change the App Currency to
-                  change all the results and chart values.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>Angular</span>
-                <span>Angular Material</span>
-                <span>Chart.js</span>
-                <span>Bootstrap</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Crypto"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a target="_blank" href="https://crypto-bd392.web.app/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="recipe">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Recipe-Book</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Authentication using email
-                  and password.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Route guard and Lazy loading.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Create , read , update and delete recipes and ingredient.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Add recipe ingredient to shopping list.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Fetching and saving data at firebase database.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>Angular</span>
-                <span>TypeScript</span>
-                <span>Bootstrap</span>
-                <span>Firebase</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Recipe-Book"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a target="_blank" href="https://recipe-book-4a739.web.app"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="world">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Where in the world</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> See all countries, Search
-                  for a country, Filter countries by region and see country
-                  detailed information on a separate page.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Click through to the border
-                  countries on the detail page.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  View the optimal layout for the interface depending on their
-                  device's screen size.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  See hover and focus states for all interactive elements on the
-                  page.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Toggle the color scheme between light and dark mode.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML & CSS</span>
-                <span>TypeScript</span>
-                <span>Bootstrap</span>
-                <span>SASS</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Where-in-the-world"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Where-in-the-world/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="amon">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Amon</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> See the cool loader when the
-                  page loads.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Smooth transition between
-                  sections using the nav links.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Amazing animation at each section of the page which gives the
-                  user a great experience.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Different image sliders with different appearance and
-                  transition way.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  View the optimal layout for the interface depending on their
-                  device's screen size.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML & CSS</span>
-                <span>JavaScript</span>
-                <span>SASS</span>
-                <span>Swiper.js</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Amon"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Amon/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="business">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Business Landing Page</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> See hover and focus states
-                  for all interactive elements on the page.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Enjoy animation which makes
-                  the User Experience more enjoyable.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  View the optimal layout for the interface depending on their
-                  device's screen size.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Business-Landing-Page"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Business-Landing-Page/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="architect">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Architect</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> See the spinner with the
-                  cool animation effect when the page loads.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Animation at the landing to
-                  display the content. Smooth transition between sections using
-                  the nav links.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Control over nav by hamburger icon and transition between
-                  sections smoothly.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Use the slider for team members and see the cool effects
-                  created by tilt.js when hovering over a member.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  See hover and focus states for all interactive elements on the
-                  page.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>SASS</span>
-                <span>TypeScript</span>
-                <span>Tilt.js</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Architect"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Architect/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="finder">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">GitHub-Finder</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Search for a user to get his
-                  data like account image, profile link, company, etc.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>See the alert if there is no
-                  user with this name.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Get the user's latest created repositories data.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  See a message if this user has no repositories to display.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>Bootstrap</span>
-                <span>TypeScript</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/GitHub-Finder"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/GitHub-Finder/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="loan">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Loan-Calculator</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Write the loan amount,
-                  interest, and years to repay then get the total payment,
-                  monthly payment, and total interest.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>If you forget one of the
-                  input fields then the alert will appear to warn you.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>SASS</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Loan-Calculator"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Loan-Calculator/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="gusser">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Number-Guesser</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Select between two game
-                  options static and dynamic range with 3 tries of playing.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Static range the user guesses
-                  a number between 1 and 10.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Dynamic range the user sets the range by setting min and max
-                  numbers.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Can guess until the 3 tries finish or you guess the correct
-                  number and win.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Can play again and get a new 3 tries by clicking play again
-                  button.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>SASS</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Number-Guesser"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Number-Guesser/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="library">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Library-Admin</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Add book to the Books list.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Delete the book from the
-                  list.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  See the alert if you want to add a book with uncompleted
-                  fields.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Save and delete to local storage to keep the list even when
-                  reloading the page.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Bootstrap</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Library-Admin"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Library-Admin/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="todo">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Todo-List</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> Add New Task to the list and
-                  see an alert if you want to add to the list without writing a
-                  task.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>Filter the list to reach a
-                  specific task with an insensitive search.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Remove a task from the list or even clear the whole list.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  All tasks are added to The local storage to keep them there
-                  even if the page reloaded.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>SASS</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Todo-List"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Todo-List/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="kasper">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Kasper</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> View the optimal layout for
-                  the interface depending on their device's screen size.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>See hover and focus states
-                  for all interactive elements on the page.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  Moving between sections smoothly.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Kasper"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Kasper/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="overlay" id="leon">
-            <div class="details">
-              <i class="fa-solid fa-circle-xmark close" id="close-details"></i>
-              <h3 class="mt-2 mb-3">Leon</h3>
-              <ul>
-                <li>
-                  <i class="fa-solid fa-check"></i> View the optimal layout for
-                  the interface depending on their device's screen size.
-                </li>
-                <li>
-                  <i class="fa-solid fa-check"></i>See hover and focus states
-                  for all interactive elements on the page.
-                </li>
-              </ul>
-              <div class="tech mt-2">
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-              <div class="links mb-1 mt-3">
-                <a
-                  target="_blank"
-                  href="https://github.com/MahmoudsMohammed/Leon"
-                  ><i class="fa-brands fa-github"></i> Github Repo</a
-                >
-                <a
-                  target="_blank"
-                  href="https://mahmoudsmohammed.github.io/Leon/"
-                  ><i class="fa-solid fa-globe"></i> Live Preview</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end projects -->
-
-      <!-- start Contact -->
-      <div class="contact" id="contact">
-        <div class="title">
-          <h3>CONTACT</h3>
-          <p>
-            Feel free to Contact me by submitting the form below and I will get
-            back to you as soon as possible
-          </p>
-        </div>
-        <form id="form">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter Your Name"
-            name="name"
-          />
-          <label for="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            placeholder="Enter Your Email"
-            name="email"
-          />
-          <label for="message">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Enter Your Message"
-          ></textarea>
-          <p></p>
-          <button type="submit" class="but">submit</button>
-        </form>
-      </div>
-      <!-- end Contact -->
-
-      <!-- start footer -->
-      <footer>
-        <div class="container">
-          <div class="info">
-            <p>Mahmoud Mohammed</p>
-            <p>
-              A front-end angular developer <i class="fa-brands fa-angular"></i>
-            </p>
-            <div class="socila">
-              <a href="https://github.com/MahmoudsMohammed" target="_blank"
-                ><i class="fa-brands fa-github"></i> Github</a
-              >
-              <a
-                href="https://www.linkedin.com/in/mahmoud-sayed-mohammed/"
-                target="_blank"
-                ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
-              >
-              <a href="mailto:mahmoudsmohammed24@gmail.com" target="_blank"
-                ><i class="fa-solid fa-envelope"></i> Email</a
-              >
-              <a
-                href="https://api.whatsapp.com/send?phone=+20 109 908 8962&text=Hello"
-                target="_blank"
-                ><i class="fa-brands fa-whatsapp"></i> +201099088962</a
-              >
-            </div>
-          </div>
-          <p class="copy">
-            &copy;Copyright 2024. Made with ❤️ by <a href="">Mahmoud👨‍💻</a>
-          </p>
-        </div>
-      </footer>
-      <!-- end footer -->
-
-      <!-- start up -->
-      <a href="#" class="up"><i class="fa-solid fa-arrow-up"></i></a>
-      <!-- end up -->
-    </main>
-
-    <!-- Scripts -->
-    <!-- Email js -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <!-- Swiper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-    <!-- Typed js -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!-- Scroll-Reveal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
-    <!-- bootstrap -->
-    <script src="script/bootstrap.js"></script>
-    <!-- main script -->
-    <script src="script/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

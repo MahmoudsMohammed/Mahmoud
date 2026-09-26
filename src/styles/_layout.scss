@@ -1,0 +1,270 @@
+@use 'tokens' as *;
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+#main,
+.footer {
+  overflow-x: clip;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.section__head {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.section__index {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  &::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+}
+
+.section__title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  margin-bottom: 0.9rem;
+}
+
+.section__sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.subhead {
+  margin: 3.5rem 0 1.25rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 20%, transparent 75%);
+  opacity: 0.55;
+}
+
+// Fixed chrome: progress, cursor, preloader, toast
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 120;
+  pointer-events: none;
+
+  span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+}
+
+.cursor {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  overflow: hidden;
+  pointer-events: none;
+
+  @include fine-pointer {
+    html.js & {
+      display: block;
+    }
+  }
+
+  &__dot,
+  &__ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    translate: -50% -50%;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+  }
+
+  &__ring {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--accent-glow);
+    display: grid;
+    place-items: center;
+    transition:
+      width 0.35s var(--ease-out),
+      height 0.35s var(--ease-out),
+      background-color 0.35s,
+      border-color 0.35s;
+  }
+
+  &__label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--bg);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &.is-hover &__ring {
+    width: 64px;
+    height: 64px;
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+
+  &.is-label &__ring {
+    width: 84px;
+    height: 84px;
+    background: var(--accent);
+  }
+
+  &.is-label &__label {
+    opacity: 1;
+  }
+
+  &.is-hidden &__dot,
+  &.is-hidden &__ring {
+    opacity: 0;
+  }
+}
+
+.preloader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  place-items: center;
+  background: var(--bg);
+  clip-path: inset(0 0 0 0);
+
+  html.js & {
+    display: grid;
+  }
+
+  &__inner {
+    text-align: center;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &__logo {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.25rem;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-size: clamp(2.4rem, 8vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    font-kerning: none;
+  }
+
+  &__role {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+
+  &__bar {
+    position: absolute;
+    left: var(--gutter);
+    right: var(--gutter);
+    bottom: 3rem;
+    height: 1px;
+    background: var(--border);
+
+    span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    right: var(--gutter);
+    bottom: 3.75rem;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--surface-2);
+    line-height: 1;
+  }
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  translate: -50% 0;
+  opacity: 0;
+  visibility: hidden;
+  max-width: calc(100vw - 2rem);
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &.is-error &__icon {
+    stroke: #f87171;
+  }
+
+  &__text {
+    font-size: 0.92rem;
+  }
+}
