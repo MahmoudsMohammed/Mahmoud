@@ -154,7 +154,7 @@ function skills(fine) {
   };
 }
 
-function work(stacked) {
+function work(isDesktop) {
   const cards = gsap.utils.toArray('.work-card');
 
   cards.forEach((card) => {
@@ -167,9 +167,9 @@ function work(stacked) {
       .from(card.querySelector('.work-card__index'), { yPercent: 40, autoAlpha: 0, duration: 1 }, '<');
   });
 
-  if (!stacked) return;
-
-  const top = () => document.querySelector('.nav').offsetHeight + 24;
+  const top = () => document.querySelector('.nav').offsetHeight + (isDesktop ? 24 : 12);
+  // Cards taller than the viewport pin by their bottom edge so their full content is read before being covered.
+  const fits = (card) => card.offsetHeight <= window.innerHeight - top();
   const last = cards[cards.length - 1];
 
   // Scaling and shading repaint the whole card every scroll frame unless each gets its own layer.
@@ -180,7 +180,7 @@ function work(stacked) {
     if (card === last) return;
     ScrollTrigger.create({
       trigger: card,
-      start: () => `top ${top()}px`,
+      start: () => (fits(card) ? `top ${top()}px` : 'bottom bottom'),
       endTrigger: last,
       end: () => `top ${top()}px`,
       pin: true,
@@ -193,9 +193,18 @@ function work(stacked) {
           start: 'top bottom',
           end: () => `top ${top()}px`,
           scrub: true,
+          invalidateOnRefresh: true,
         },
       })
-      .to(card, { scale: 0.9, ease: 'none' }, 0)
+      .to(
+        card,
+        {
+          scale: isDesktop ? 0.9 : 0.94,
+          transformOrigin: () => (fits(card) ? '50% 0%' : '50% 100%'),
+          ease: 'none',
+        },
+        0
+      )
       .to(card.querySelector('.work-card__shade'), { opacity: 0.65, ease: 'none' }, 0);
   });
 }
@@ -265,12 +274,11 @@ export function initSections(mm) {
   mm.add(
     {
       isDesktop: queries.isDesktop,
-      isTall: queries.isTall,
       motion: queries.motion,
       fine: queries.fine,
     },
     (ctx) => {
-      const { isDesktop, isTall, motion, fine } = ctx.conditions;
+      const { isDesktop, motion, fine } = ctx.conditions;
 
       if (!motion) {
         reducedReveals();
@@ -281,7 +289,7 @@ export function initSections(mm) {
       about();
       experience(isDesktop);
       const cleanSkills = skills(fine);
-      work(isDesktop && isTall);
+      work(isDesktop);
       const cleanCaps = capabilities(fine);
       community();
       contact();
